@@ -7,7 +7,7 @@
             "title": "Mario game in JavaScript",
             "playlink": "https://games-ef600.web.app/mario/",
             "titleforlink": "mariogameinjavaScript",
-            "description": "Enemy AI in JavaScript game",
+            "description": "This game is prototype of classic super mario game, i build this game using html and javascripts popular gaming library Phaser.js",
             "trending": true,
             "image": "/images/mario1.jpg"
         },
@@ -18,7 +18,7 @@
             "title": "Rock Paper Scissors in JavaScript",
             "playlink": "https://games-ef600.web.app/RPS/",
             "titleforlink": "rockpaperscissorsinjavaScript",
-            "description": "Enemy AI in JavaScript game",
+            "description": "Rock Paper Scissors game , i try to convert classic indoor game into digital using html and javascript",
             "trending": false,
             "image": "/images/mario2.jpg"
         },
@@ -29,7 +29,7 @@
             "title": "Chrome Dino Game in JavaScript",
             "playlink": "https://games-ef600.web.app/dino/",
             "titleforlink": "chromedinogameinjavaScript",
-            "description": "Enemy AI in JavaScript game",
+            "description": "This game is prototype of chromes dino game, i build this game using html and javascripts popular gaming library Phaser.js",
             "trending": true,
             "image": "/images/dino.png"
         },
@@ -40,7 +40,7 @@
             "title": "Flappy Bird in JavaScript",
             "playlink": "https://games-ef600.web.app/flappyBird/",
             "titleforlink": "flappybirdinjavaScript",
-            "description": "Enemy AI in JavaScript game",
+            "description": "This game is prototype of classic flappy bird game, i build this game using html and javascripts popular gaming library Phaser.js",
             "trending": true,
             "image": "/images/flappybird.png"
         },
@@ -51,7 +51,7 @@
             "title": "Space Imapct in JavaScript",
             "playlink": "https://games-ef600.web.app/spaceImpact/",
             "titleforlink": "spaceimapctinjavaScript",
-            "description": "Enemy AI in JavaScript game",
+            "description": "This game is prototype of classic nokias Space Impact game, i build this game using html and javascripts popular gaming library Phaser.js",
             "trending": false,
             "image": "/images/spaceimapact.png"
         }

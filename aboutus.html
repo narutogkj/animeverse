@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="../css/slide-bar.css">
 <link rel="stylesheet" type="text/css" href="../css/index.css">
-<link rel="stylesheet" type="text/css" href="../css/list.css">
+<link rel="stylesheet" type="text/css" href="../css/card-section-1.css">
 <link rel="stylesheet" type="text/css" href="../css/footer.css">
 <link rel="stylesheet" type="text/css" href="../css/header.css">
 <link rel="stylesheet" type="text/css" href="../css/article.css">
@@ -19,10 +19,11 @@
 </script>
 
 
-<title>Animeverse, Articles -Anime, Cartoon, Manga, Comics, cosplay, Game</title>
+<title>Animeverse, aboutus</title>
 <meta name="keyword" content="" />
-<meta name="description" content="Open the the door of anime universe, Stay connected with us and get anime cartoon news videos articles and much more " />
+<meta name="description" content="About us, Open the the door of anime universe " />
 <meta name="language" content="english" />
+
 
 </head>
 <body>
@@ -45,28 +46,28 @@
    </div>
   </div>
 
-  <br><br><br>
-  <section class="list">
-    <nav aria-label="breadcrumb">
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-        <li class="breadcrumb-item"><a href="./ytvideos.html">Videos</a></li>
-        <li class="breadcrumb-item active" aria-current="page" id="pagetitle"></li>
-      </ol>
-    </nav>
-    <div id='mainblock'>
-   
-    </div>
-  </section>
- <br>
+<br><br><br>
 
- <div class='footer-main-div'>
+<div class='jumbotron'>
+<h2 class='text-center'>Animeverse: Open the door of ANIME universe</h2>
+</div>
+<div class='container'>
+<h4>Animeverse is destination to all anime manga gaming cosplay news videos and articles</h4><br><br>
+<h3>About Author</h3><br>
+<h4>Hii, my name is Gaurav jha, I am commputer geek, and an otaku, i made this website with 
+the vision of bringing anime fans in one place ,
+and if you want know more or you have a any questyion or any feedback you can contact us<br></h4>
+
+
+
+
+<div class='footer-main-div'>
   <div class='footer-social-icons'>
     <ul>
       <li><a href="https://www.facebook.com/gaurav.jha.524/" target='blank'><i class='fab fa-facebook-f'></i></a></li>
       <li><a href='#' target='blank'><i class='fab fa-twitter'></i></a></li>
       <li><a href='https://www.youtube.com/channel/UCbw0ReCZsrTDeaIXJBGVOqg' target='blank'><i class='fab fa-youtube'></i></a></li>
-   </ul>
+    </ul>
   </div>
 
   <div class='footer-menu-one'>
@@ -85,85 +86,21 @@
       <li><a href='/DCMA.html'>DCMA</a></li> 
       <li><a href='/Disclaimer.html'>Disclaimer</a></li> 
       <li><a href='/privacypolicy.html'>Privacy</a></li>
-      <li><a href='/aboutus.php'>Aboutus</a></li>
+      <li><a href='/aboutus.html'>Aboutus</a></li>
     </ul>
   </div>
 </div>
 <div class='footer-bottom'>
-	<p>Copyright &copy; Desiotaku@Gaurav 2021</p>
+  <p>Copyright &copy; Desiotaku@Gaurav 2021</p>
 </div>
 <br>
 
 <script src="/js/jquery.js"></script>
 <script src="api.js"></script>
-
- <script type="text/javascript">
-
-  let data;
-  let mainblock = document.getElementById('mainblock');
-  let pagetitle = document.getElementById('pagetitle');
-
-  let queryParamsString = (window.location.search).replace('?', '').split("&");
-  let queryParamsObject = {}
-  for (i = 0; i < queryParamsString.length; i++) {
-    queryParamsObject[queryParamsString[i].split('=')[0]] = queryParamsString[i].split('=')[1]
-  }
-
-  console.log(queryParamsObject)
-
-  function filldata(data){
-    mainblock.innerHTML += `
-    <div class="container-fluid">
-        <div class="row">
-          <div class='col-sm-12'>
-            <div class='card'>
-              <div style="display:flex; flex-direction: row;">
-                <div class="thumbn">
-                <a href='${data.youtubelink}'>
-                  <img src="${data.image}" width="250px">
-                </a>
-              </div>
-                <div class="discription">
-                <div class="borderStyle">
-                  <h3>${data.title}</h3>
-                  <p>${data.description}</p>
-                  
-                </div>
-                </div>
-                <div class="actionButtons">
-                  <a href="${data.downloadLink}" type="button" class="btn btn-outline-primary" style="margin: 5px;">Download Source Code</a>
-                  <a href="${data.playlink}" type="button" class="btn btn-secondary"  style="margin: 5px;">Play now</a>
-                </div>  
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    `;
-  }
-
-  fetch(baseUrl)
-  .then(response => response.json())
-  .then(d => {
-    data = d.videos;
-    for(var i=0; i<data.length; i++){
-      if(data[i].titleforlink == queryParamsObject.v){
-        pagetitle.innerHTML = data[i].title;
-        for(var j =0; j<data[i].playlist.length; j++){
-          console.log(data[i].playlist[j])
-          filldata(data[i].playlist[j]);
-        } 
-      }  
-    }
-  });
-
-  $(document).ready(function(){
-    $('.icon').click(function(){
-      $('.menu').toggleClass('active')
-    })
-  })
- </script>
+  
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js"></script>
 </body>
 </html>
+
+

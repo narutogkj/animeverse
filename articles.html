@@ -15,7 +15,7 @@
 <link rel="stylesheet" type="text/css" href="../css/article.css">
 <link rel="stylesheet" type="text/css" href="../css/share.css">
 <link rel="icon" type="image/png" href="http://animeverse.myartsonline.com/images/favicon.png" />
-
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8900138503743488" crossorigin="anonymous"></script>
 </script>
 
 
@@ -48,87 +48,30 @@
   <section>
     <br><br>
     <div class="container-fluid">
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Blogs</li>
-            </ol>
-        </nav>
-      <div class="container">
-        <div class="row">
-            
-          <div class='col-sm-4'>
-            <div class='card'>
-                      <a href='singleGame.html'>
-              <div class='post-image'>
-                     <img src='./images/marioGameThumbnal.jpg' class='img-responsive' width='100%' alt='".$row['alt']."'>
-              </div>
-              <div class='news-content'>
-                <span class='category'>category</span>
-                <div class='post-meta'>
-                      <span class='author'>
-                       
-                         <i class='fas fa-user-circle' aria-hidden='true'></i>
-                       author
-                       
-                      </span>
-                      <span class='time pull-right'>
-                         <i class='far fa-calendar-alt' aria-hidden='true'></i>
-                       date
-                      </span>
-                      <div class='clearfix'></div>
-                </div>
-                <h2 class='post-header'>
-                title title title title title title title 
-                </h2>
-                <!-- <p>content content content content content</p> -->
-               </div>
-            </div></a>
-          </div> 
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Videos</li>
+        </ol>
+      </nav>
+     <div class="container">
+        <div class="row" id="mainblock">
+         
+         
+         
           
-          
-
-
-          <div class='col-sm-4'>
-            <div class='card'>
-                      <a href='singleGame.html'>
-              <div class='post-image'>
-                     <img src='./images/dc-vs-marvel.jpg' class='img-responsive' width='100%' alt='".$row['alt']."'>
-              </div>
-              <div class='news-content'>
-                <span class='category'>category</span>
-                <div class='post-meta'>
-                      <span class='author'>
-                       
-                         <i class='fas fa-user-circle' aria-hidden='true'></i>
-                       author
-                       
-                      </span>
-                      <span class='time pull-right'>
-                         <i class='far fa-calendar-alt' aria-hidden='true'></i>
-                       date
-                      </span>
-                      <div class='clearfix'></div>
-                </div>
-                <h2 class='post-header'>
-                title title title title title title title 
-                </h2>
-                <!-- <p>content content content content content</p> -->
-               </div>
-            </div></a>
-          </div> 
         </div>
-      </div>
+     </div>
     </div>
-  </section>
+ </section>
  <br>
 
  <div class='footer-main-div'>
   <div class='footer-social-icons'>
     <ul>
-      <li><a href="#" target='blank'><i class='fab fa-facebook-f'></i></a></li>
+      <li><a href="https://www.facebook.com/gaurav.jha.524/" target='blank'><i class='fab fa-facebook-f'></i></a></li>
       <li><a href='#' target='blank'><i class='fab fa-twitter'></i></a></li>
-      <li><a href='#' target='blank'><i class='fab fa-youtube'></i></a></li>
+      <li><a href='https://www.youtube.com/channel/UCbw0ReCZsrTDeaIXJBGVOqg' target='blank'><i class='fab fa-youtube'></i></a></li>
     </ul>
   </div>
 
@@ -144,11 +87,11 @@
   <div class='footer-menu-two'>
     <ul>
       <li><a href='/'>Home</a></li> 
-      <li><a href='../sitemap.html'>Sitemap</a></li> 
-      <li><a href='../DCMA.php'>DCMA</a></li> 
-      <li><a href='../Disclaimer.php'>Disclaimer</a></li> 
-      <li><a href='../privacypolicy.php'>Privacy</a></li>
-      <li><a href='../aboutus.php'>Aboutus</a></li>
+      <li><a href='/sitemap.xml'>Sitemap</a></li>
+      <li><a href='DCMA.html'>DCMA</a></li> 
+      <li><a href='/Disclaimer.html'>Disclaimer</a></li> 
+      <li><a href='/privacypolicy.html'>Privacy</a></li>
+      <li><a href='/aboutus.php'>Aboutus</a></li>
     </ul>
   </div>
 </div>
@@ -157,14 +100,62 @@
 </div>
 <br>
 
-<script src="../js/jquery.js"></script>
-
+<script src="/js/jquery.js"></script>
+<script src="api.js"></script>
+  
  <script type="text/javascript">
-     $(document).ready(function(){
-       $('.icon').click(function(){
-         $('.menu').toggleClass('active')
-       })
-     })
+
+  let data;
+  let mainblock = document.getElementById('mainblock');
+
+
+  $(document).ready(function(){
+    $('.icon').click(function(){
+      $('.menu').toggleClass('active')
+    })
+  })
+
+
+  function filldata(data){
+    mainblock.innerHTML += `
+    <div class='col-sm-4'>
+            <div class='card'>
+                      <a href='ytsingle.html?v=${data.titleforlink}'>
+              <div class='post-image'>
+                     <img src='${data.image}' class='img-responsive' width='100%' alt='".$row['alt']."'>
+              </div>
+              <div class='news-content'>
+                <span class='category'>${data.category}</span>
+                <div class='post-meta'>
+                      <span class='author'>
+                       <i class='fas fa-user-circle' aria-hidden='true'></i>
+                       ${data.author}
+                      </span>
+                      <span class='time pull-right'>
+                         <i class='far fa-calendar-alt' aria-hidden='true'></i>
+                         ${data.date}
+                      </span>
+                      <div class='clearfix'></div>
+                </div>
+                <h2 class='post-header'>
+                  ${data.title}
+                </h2>
+               </div>
+            </div></a>
+          </div>
+    `;
+  }
+
+
+  fetch(baseUrl)
+  .then(response => response.json())
+  .then(d => {
+    data = d.videos;
+    for(var i=0; i<data.length; i++){
+      filldata(data[i])
+    }
+  });
+
  </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js"></script>
