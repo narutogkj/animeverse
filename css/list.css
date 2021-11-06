@@ -1,0 +1,96 @@
+.list a{
+    text-decoration: none;
+    color: #262626;
+   
+}
+.list{
+	padding: 0 50px 0;
+}
+
+.list .card:hover{
+	transform: scale(1.1) ;
+}
+
+
+.list .card{
+	position: relative;
+	height:120px;
+	overflow: hidden;
+	box-shadow: 0 5px 15px rgba(0,0,0,.5);
+	margin-bottom: 15px;
+}
+.list .card .post-image{
+	height: 320px;
+	overflow: hidden;
+}
+.list .card .post-image img{
+	transition: .5s;
+}
+
+
+.list .card .discription{
+	padding: 15px;
+}
+.list .card .discription .borderStyle{
+	border-color: #262626;
+	border-right-style: solid;
+    border-right-width: 5px;
+	
+}
+
+
+.list .card .actionButtons{
+	margin: 10px;
+}
+.list .card .news-content{
+	position: absolute;
+	bottom: -90px;
+	background: #fff;
+	transition:.5s;
+}
+
+.list .card .category{
+	position: absolute;
+	top: -30px;
+	left: 0;
+	height: 30px;
+	background: #00b8f4;
+	text-align: center;
+	color: #fff;
+	text-transform: uppercase;
+	padding: 5px 20px;
+	font-size: 16px;
+	font-weight: bold;
+	transition: .5s;
+}
+
+.list .card .news-content .post-meta a{
+text-decoration: none;
+padding-right: 10px;
+color: #262626;
+font-weight: bold;
+transition: .5s;
+}
+.list .card .news-content .post-meta a:hover{
+	color: #df084a;
+}
+.list .card .news-content .post-header{
+	margin: 0;
+	padding-right: 10px 0;
+	color: #007da6;
+	height: 75px;
+	font-size: 28px;
+	overflow: hidden;
+}
+
+.list .card .news-content p{
+	font-size: 16px;
+	margin: 10px 0 0;
+	padding: 0;
+	color: #262626;
+	transition: .5s;
+	opacity: 0;
+}
+.list .card:hover .news-content p{
+	opacity: 1;
+}

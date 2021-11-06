@@ -1,0 +1,119 @@
+
+.title{
+  margin-top: -5px;
+}
+.author,
+.date{
+  margin-top: 3px;
+}
+.info{
+  line-height: 1.4;
+  margin-left:0;
+}
+h2.2{
+ font-size: 10px;
+}
+b>li{
+ font-size: 20px;
+}
+.rank{
+    margin-top: -20px;
+}
+.navigation-bar{
+  position: fixed;
+  top:10px;
+  z-index: 9999;
+  width: 100%;
+  height: 40px;
+  background: #272727;
+  box-shadow: 0 5px 15px rgba(0,0,0,.5);
+}
+.brand-image{
+   margin-top: -4px;
+   margin-left: 15px;
+   width:150px;
+}
+
+
+.menu{
+  position: fixed;
+  top: 7px;
+  right: 3px;
+  z-index: 9999;
+  width: 45px;
+  height: 45px;
+  background-color: #004c99;
+  transition: .5s;
+}
+.menu .icon{
+  width: 50px;
+  height: 50px;
+  line-height: 30px;
+  font-size:20px;
+  color: #fff;
+  text-align: center;
+  position: absolute;
+  top: 7px;
+  right: -2px;
+  cursor: pointer;
+}
+
+.menu .icon:before{
+  content: '\f0c9';
+  font-family: fontAwesome;
+}
+
+.menu.active .icon:before{
+  content: '\f00d';
+  font-family: fontAwesome;
+}
+
+.menu.active{
+  width: 100vw;
+  height: 100vh;
+}
+
+.form{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+.menu.active .form{
+  display: block;
+}
+header ul li{
+  font-family: 'Concert One', cursive;
+  list-style: none;
+  color: #fff;
+}
+header ul li a {
+  position: relative;
+  display: block;
+  text-align: center;
+  margin: 20px;
+  padding: 5px 10px;
+  font-size: 60px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+
+@media(max-width: 768px){
+.form{
+  position: absolute;
+  top: 40%;
+  left: 53%;
+  transform: translate(-60%, -47%);
+}  
+.hide-in-mobile{
+  display: none;
+}
+}
+@media(min-width: 768px){
+.row{
+margin-right: 0;
+}
+}

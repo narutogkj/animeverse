@@ -1,0 +1,91 @@
+{
+    "games": [
+        {
+            "category": "Js Games",
+            "author": "Gaurav",
+            "date": "05-11-2021",
+            "title": "Mario game in JavaScript",
+            "playlink": "https://games-ef600.web.app/mario/",
+            "titleforlink": "mariogameinjavaScript",
+            "description": "Enemy AI in JavaScript game",
+            "trending": true,
+            "image": "/images/mario1.jpg"
+        },
+        {
+            "category": "Js Games",
+            "author": "Gaurav",
+            "date": "05-11-2021",
+            "title": "Rock Paper Scissors in JavaScript",
+            "playlink": "https://games-ef600.web.app/RPS/",
+            "titleforlink": "rockpaperscissorsinjavaScript",
+            "description": "Enemy AI in JavaScript game",
+            "trending": false,
+            "image": "/images/mario2.jpg"
+        },
+        {
+            "category": "Js Games",
+            "author": "Gaurav",
+            "date": "05-11-2021",
+            "title": "Chrome Dino Game in JavaScript",
+            "playlink": "https://games-ef600.web.app/dino/",
+            "titleforlink": "chromedinogameinjavaScript",
+            "description": "Enemy AI in JavaScript game",
+            "trending": true,
+            "image": "/images/dino.png"
+        },
+        {
+            "category": "Js Games",
+            "author": "Gaurav",
+            "date": "05-11-2021",
+            "title": "Flappy Bird in JavaScript",
+            "playlink": "https://games-ef600.web.app/flappyBird/",
+            "titleforlink": "flappybirdinjavaScript",
+            "description": "Enemy AI in JavaScript game",
+            "trending": true,
+            "image": "/images/flappybird.png"
+        },
+        {
+            "category": "Js Games",
+            "author": "Gaurav",
+            "date": "05-11-2021",
+            "title": "Space Imapct in JavaScript",
+            "playlink": "https://games-ef600.web.app/spaceImpact/",
+            "titleforlink": "spaceimapctinjavaScript",
+            "description": "Enemy AI in JavaScript game",
+            "trending": false,
+            "image": "/images/spaceimapact.png"
+        }
+    ],
+
+    "videos":[
+        {
+            "category":"Videos",
+            "author": "Gaurav",
+            "date": "05-11-2021",
+            "title":"Create Mario in JavaScript",
+            "titleforlink": "createmarioinjavaScript",
+            "image": "/images/mario1.jpg",
+            "playlist": [
+                {  "part": "1",
+                    "title": "How to make mario game in HTML",
+                    "description": "How to make mario game in HTML",
+                    "playlink": "singleGame.html?g=mariogameinjavaScript",
+                    "downloadLink": "https://github.com/narutogkj/Mario/archive/refs/heads/Part1.zip",
+                    "image": "/images/mario1.jpg",
+                    "youtubelink":"https://youtu.be/jloDKBVzHMk"
+                },
+                {   "part": "2",
+                    "title": "Enemy AI in JavaScript game",
+                    "description": "Enemy AI in JavaScript game",
+                    "playlink": "singleGame.html?g=mariogameinjavaScript",
+                    "downloadLink": "https://github.com/narutogkj/Mario/archive/refs/heads/Part2.zip",
+                    "image": "/images/mario2.jpg",
+                    "youtubelink":"https://youtu.be/jloDKBVzHMk"
+                }
+            ]
+        }
+    ]
+}
+
+
+
