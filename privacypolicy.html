@@ -37,10 +37,10 @@
        <div class='form'>
         <header>
            <ul>
-            <li><a href='jsgames.html'>Games</a></li>
-            <li><a href='ytvideos.html'>Videos</a></li>
-            <li><a href='articles.html'>Blogs</a></li>
-            <li><a href='#'>Anime</a></li>
+            <li><a href='/jsgames.html'>Games</a></li>
+            <li><a href='/ytvideos.html'>Videos</a></li>
+            <li><a href='/articles.html'>Anime</a></li>
+            <li><a href='/projects.html'>Projects</a></li>
            </ul>
         </header>
       </div>
@@ -52,7 +52,7 @@
 <br><br><br>
 
 <h2>AnimeVerse</h2>
-</p>(“us”, “we”, or “our”) operates http://animeverse.myartsonline.com (the “Site”).
+</p>(“us”, “we”, or “our”) operates https://brave-leakey-1823f8.netlify.app/ (the “Site”).
 This page informs you of our policies regarding the collection, use and disclosure 
 of Personal Information we receive from users of the Site. 
 We use your Personal Information only for providing and improving the Site.
@@ -145,8 +145,8 @@ Opting out: </p>
     <ul>
       <li><a href='/jsgames.html'>Games</a></li>
       <li><a href='/ytvideos.html'>Videos</a></li>
-      <li><a href='/articles.html'>Blogs</a></li>
-      <li><a href='#'>Anime</a></li>
+      <li><a href='/articles.html'>Anime</a></li>
+      <li><a href='/projects.html'>Projects</a></li>
       </ul>
   </div>
 
@@ -168,7 +168,13 @@ Opting out: </p>
 
 <script src="/js/jquery.js"></script>
 <script src="api.js"></script>
-  
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('.icon').click(function(){
+      $('.menu').toggleClass('active')
+    })
+  })
+</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js"></script>
 </body>

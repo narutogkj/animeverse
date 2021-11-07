@@ -20,7 +20,7 @@
 </script>
 
 
-<title>20 DC characters that are copied from Marvel universe</title>
+<title>Animeverse, Articles -Anime, Cartoon, Manga, Comics, cosplay, Game</title>
 <meta name="keyword" content="" />
 <meta name="description" content="When DC copy or inspired from Marvel's characters Here is the list of some dc characters which are inspired or stolen from marvel universe" />
 <meta name="language" content="english" />
@@ -71,16 +71,15 @@
    <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-        <li class="breadcrumb-item"><a href="./jsgames.html">Games</a></li>
+        <li class="breadcrumb-item"><a href="./projects.html">Projects</a></li>
         <li class="breadcrumb-item active" aria-current="page" id="pagetitle"></li>
       </ol>
     </nav>
 	 <div class="row">
-      
       <div class='col-sm-8' id="mainblock">
          
       </div>
-      <div class='col-sm-4'  id="relatedblock">
+      <div class='col-sm-4' id="relatedblocks">
 
       </div>	
  </div>
@@ -131,7 +130,7 @@
   let data;
   let relateddata;
   let mainblock = document.getElementById('mainblock');
-  let relatedblock = document.getElementById('relatedblock');
+  let relatedblocks = document.getElementById('relatedblocks');
   let pagetitle = document.getElementById('pagetitle');
 
   let queryParamsString = (window.location.search).replace('?', '').split("&");
@@ -140,8 +139,14 @@
    queryParamsObject[queryParamsString[i].split('=')[0]] = queryParamsString[i].split('=')[1]
   }
 
+  console.log(queryParamsObject)
 
- 
+
+   $(document).ready(function(){
+      $('.icon').click(function(){
+         $('.menu').toggleClass('active')
+      })
+   })
 
 
    function fillmaindata(data){
@@ -150,7 +155,7 @@
       <div>
          
           <a href="${data.playlink}" target="_blank">  
-            <i class="fab fa-google-play playicon"></i>
+            <i class="fas fa-download playicon"></i>
             <img src="${data.image}" width="100%">
          </a>
       </div>
@@ -202,9 +207,10 @@
       `;
    }
    function fillrelateddata(data){
-    relatedblock.innerHTML += `
+    
+      relatedblocks.innerHTML += `
             <div class='card'>
-              <a href='singleGame.html?g=${data.titleforlink}'>
+              <a href='singleProjects.html?g=${data.titleforlink}'>
               <div class='post-image'>
                      <img src='${data.image}' class='img-responsive' width='100%' alt='".$row['alt']."'>
               </div>
@@ -225,8 +231,8 @@
                 <h2 class='post-header'>
                   ${data.title}
                 </h2>
-               </div>
-            </div></a>
+               </div></a>
+            </div>
           `;
   }
 
@@ -234,8 +240,9 @@
    fetch(baseUrl)
   .then(response => response.json())
   .then(d => {
-    data = d.games;
+    data = d.projects;
     for(var i=0; i<data.length; i++){
+      
       if(data[i].titleforlink == queryParamsObject.g){
          fillmaindata(data[i]) ;
         pagetitle.innerHTML = data[i].title
@@ -244,23 +251,20 @@
   });
     
 
+  
   fetch(baseUrl)
   .then(response => response.json())
   .then(d => {
-   relateddata = d.games;
-    for(var i=0; i<relateddata.length; i++){
-      if(relateddata[i].trending == true )
-      fillrelateddata(relateddata[i])
+   relatedblock = d.projects;
+    for(var i=0; i<relatedblock.length; i++){
+      
+      if(relatedblock[i].trending == true )
+      
+      fillrelateddata(relatedblock[i])
     }
   });
- 
-
-
-  $(document).ready(function(){
-      $('.icon').click(function(){
-         $('.menu').toggleClass('active')
-      })
-   })
+  
+    
   </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js"></script>

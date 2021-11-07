@@ -17,7 +17,6 @@
 <link rel="stylesheet" type="text/css" href="./css/list.css">
 <link rel="icon" type="image/png" href="#" />
 
-</script>
 
 <title>AnimeVerse: a Door of Anime and Comics universe</title>
 <meta name="keyword" content="" />
@@ -46,10 +45,10 @@
        <div class='form'>
         <header>
            <ul>
-              <li><a href='jsgames.html'>Games</a></li>
-              <li><a href='ytvideos.html'>Videos</a></li>
-              <li><a href='articles.html'>Blogs</a></li>
-              <li><a href='#'>Anime</a></li>
+            <li><a href='/jsgames.html'>Games</a></li>
+            <li><a href='/ytvideos.html'>Videos</a></li>
+            <li><a href='/articles.html'>Anime</a></li>
+            <li><a href='/projects.html'>Projects</a></li>
            </ul>
         </header>
       </div>
@@ -173,8 +172,8 @@
     <ul>
       <li><a href='/jsgames.html'>Games</a></li>
       <li><a href='/ytvideos.html'>Videos</a></li>
-      <li><a href='/articles.html'>Blogs</a></li>
-      <li><a href='#'>Anime</a></li>
+      <li><a href='/articles.html'>Anime</a></li>
+      <li><a href='/projects.html'>Projects</a></li>
       </ul>
   </div>
 
@@ -245,10 +244,22 @@
   fetch(baseUrl)
   .then(response => response.json())
   .then(d => {
-    data = d.games;
-    for(var i=0; i<data.length; i++){
-      if(data[i].trending == true )
-      filldata(data[i])
+    data = d;
+    for(var i=0; i<data.games.length; i++){
+      if(data.games[i].trending == true )
+      filldata(data.games[i])
+    }
+    for(var i=0; i<data.videos.length; i++){
+      if(data.videos[i].trending == true )
+      filldata(data.videos[i])
+    }
+    for(var i=0; i<data.anime.length; i++){
+      if(data.anime[i].trending == true )
+      filldata(data.anime[i])
+    }
+    for(var i=0; i<data.projects.length; i++){
+      if(data.projects[i].trending == true )
+      filldata(data.projects[i])
     }
   });
   </script>

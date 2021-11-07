@@ -31,10 +31,10 @@
        <div class='form'>
         <header>
            <ul>
-            <li><a href='jsgames.html'>Games</a></li>
-            <li><a href='ytvideos.html'>Videos</a></li>
-            <li><a href='articles.html'>Blogs</a></li>
-            <li><a href='#'>Anime</a></li>
+            <li><a href='/jsgames.html'>Games</a></li>
+            <li><a href='/ytvideos.html'>Videos</a></li>
+            <li><a href='/articles.html'>Anime</a></li>
+            <li><a href='/projects.html'>Projects</a></li>
            </ul>
         </header>
       </div>
@@ -90,8 +90,8 @@
       <ul>
         <li><a href='/jsgames.html'>Games</a></li>
         <li><a href='/ytvideos.html'>Videos</a></li>
-        <li><a href='/articles.html'>Blogs</a></li>
-        <li><a href='#'>Anime</a></li>
+        <li><a href='/articles.html'>Anime</a></li>
+        <li><a href='/projects.html'>Projects</a></li>
         </ul>
     </div>
   
@@ -113,7 +113,13 @@
   
   <script src="/js/jquery.js"></script>
   <script src="api.js"></script>
-    
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('.icon').click(function(){
+        $('.menu').toggleClass('active')
+      })
+    })
+  </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js"></script>
   </body>

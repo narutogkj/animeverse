@@ -35,10 +35,10 @@
        <div class='form'>
         <header>
            <ul>
-            <li><a href='jsgames.html'>Games</a></li>
-            <li><a href='ytvideos.html'>Videos</a></li>
-            <li><a href='articles.html'>Blogs</a></li>
-            <li><a href='#'>Anime</a></li>
+            <li><a href='/jsgames.html'>Games</a></li>
+            <li><a href='/ytvideos.html'>Videos</a></li>
+            <li><a href='/articles.html'>Anime</a></li>
+            <li><a href='/projects.html'>Projects</a></li>
            </ul>
         </header>
       </div>
@@ -51,7 +51,7 @@
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-          <li class="breadcrumb-item active" aria-current="page">Videos</li>
+          <li class="breadcrumb-item active" aria-current="page">Article</li>
         </ol>
       </nav>
      <div class="container">
@@ -79,8 +79,8 @@
     <ul>
       <li><a href='/jsgames.html'>Games</a></li>
       <li><a href='/ytvideos.html'>Videos</a></li>
-      <li><a href='/articles.html'>Blogs</a></li>
-      <li><a href='#'>Anime</a></li>
+      <li><a href='/articles.html'>Anime</a></li>
+      <li><a href='/projects.html'>Projects</a></li>
       </ul>
   </div>
 
@@ -120,7 +120,7 @@
     mainblock.innerHTML += `
     <div class='col-sm-4'>
             <div class='card'>
-                      <a href='ytsingle.html?v=${data.titleforlink}'>
+                      <a href='/article/${data.titleforlink}'>
               <div class='post-image'>
                      <img src='${data.image}' class='img-responsive' width='100%' alt='".$row['alt']."'>
               </div>
@@ -150,7 +150,7 @@
   fetch(baseUrl)
   .then(response => response.json())
   .then(d => {
-    data = d.videos;
+    data = d.anime;
     for(var i=0; i<data.length; i++){
       filldata(data[i])
     }
