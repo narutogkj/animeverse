@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="../css/slide-bar.css">
 <link rel="stylesheet" type="text/css" href="../css/index.css">
-<link rel="stylesheet" type="text/css" href="../css/card-section-1.css">
+<link rel="stylesheet" type="text/css" href="../css/list.css">
 <link rel="stylesheet" type="text/css" href="../css/footer.css">
 <link rel="stylesheet" type="text/css" href="../css/header.css">
 <link rel="stylesheet" type="text/css" href="../css/article.css">
@@ -43,23 +43,17 @@
    </div>
   </div>
 
-
-  
-  <section>
-    <br><br>
-
-    <div class="container-fluid">
-      <nav aria-label="breadcrumb">
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-          <li class="breadcrumb-item active" aria-current="page">Projects</li>
-        </ol>
-      </nav>
-      <div class="container">
-        <div class="row" id="mainblock">
-      
-        </div>
-      </div> 
+  <br><br><br>
+  <section class="list">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+        <li class="breadcrumb-item"><a href="./ytvideos.html">Videos</a></li>
+        <li class="breadcrumb-item active" aria-current="page" id="pagetitle"></li>
+      </ol>
+    </nav>
+    <div id='mainblock'>
+   
     </div>
   </section>
  <br>
@@ -70,7 +64,7 @@
       <li><a href="https://www.facebook.com/gaurav.jha.524/" target='blank'><i class='fab fa-facebook-f'></i></a></li>
       <li><a href='#' target='blank'><i class='fab fa-twitter'></i></a></li>
       <li><a href='https://www.youtube.com/channel/UCbw0ReCZsrTDeaIXJBGVOqg' target='blank'><i class='fab fa-youtube'></i></a></li>
-    </ul>
+   </ul>
   </div>
 
   <div class='footer-menu-one'>
@@ -85,11 +79,11 @@
   <div class='footer-menu-two'>
     <ul>
       <li><a href='/'>Home</a></li> 
-      <li><a href='/sitemap.xml'>Sitemap</a></li> 
+      <li><a href='/sitemap.xml'>Sitemap</a></li>
       <li><a href='/DCMA.html'>DCMA</a></li> 
       <li><a href='/Disclaimer.html'>Disclaimer</a></li> 
       <li><a href='/privacypolicy.html'>Privacy</a></li>
-      <li><a href='/aboutus.html'>Aboutus</a></li>
+      <li><a href='/aboutus.php'>Aboutus</a></li>
     </ul>
   </div>
 </div>
@@ -98,62 +92,74 @@
 </div>
 <br>
 
-<script src="../js/jquery.js"></script>
+<script src="/js/jquery.js"></script>
 <script src="api.js"></script>
 
-
  <script type="text/javascript">
+
   let data;
   let mainblock = document.getElementById('mainblock');
+  let pagetitle = document.getElementById('pagetitle');
+
+  let queryParamsString = (window.location.search).replace('?', '').split("&");
+  let queryParamsObject = {}
+  for (i = 0; i < queryParamsString.length; i++) {
+    queryParamsObject[queryParamsString[i].split('=')[0]] = queryParamsString[i].split('=')[1]
+  }
+
+  console.log(queryParamsObject)
+
+  function filldata(data){
+    mainblock.innerHTML += `
+    <div class="container-fluid">
+        <div class="row">
+          <div class='col-sm-12'>
+            <div class='card'>
+              <div style="display:flex; flex-direction: row;">
+                <div class="thumbn">
+                <a href='${data.youtubelink}'>
+                  <img src="${data.image}" width="250px">
+                </a>
+              </div>
+                <div class="discription">
+                <div class="borderStyle">
+                  <h3>${data.title}</h3>
+                  <p>${data.description}</p>
+                  
+                </div>
+                </div>
+                <div class="actionButtons">
+                  <a href="${data.downloadLink}" type="button" class="btn btn-outline-primary" style="margin: 5px;">Download Source Code</a>
+                  <a href="${data.playlink}" type="button" class="btn btn-secondary"  style="margin: 5px;">Play now</a>
+                </div>  
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+  }
+
+  fetch(baseUrl)
+  .then(response => response.json())
+  .then(d => {
+    data = d.videos;
+    for(var i=0; i<data.length; i++){
+      if(data[i].titleforlink == queryParamsObject.v){
+        pagetitle.innerHTML = data[i].title;
+        for(var j =0; j<data[i].playlist.length; j++){
+          console.log(data[i].playlist[j])
+          filldata(data[i].playlist[j]);
+        } 
+      }  
+    }
+  });
 
   $(document).ready(function(){
     $('.icon').click(function(){
       $('.menu').toggleClass('active')
     })
   })
-
-
-  function filldata(data){
-    mainblock.innerHTML += `
-    <div class='col-sm-4'>
-            <div class='card'>
-              <a href='singleProjects.html?p=${data.titleforlink}'>
-              <div class='post-image'>
-                     <img src='${data.image}' class='img-responsive' width='100%' alt='".$row['alt']."'>
-              </div>
-              <div class='news-content'>
-                <span class='category'>${data.category}</span>
-                <div class='post-meta'>
-                      <span class='author'>
-                       
-                         <i class='fas fa-user-circle' aria-hidden='true'></i>
-                         ${data.author}
-                      </span>
-                      <span class='time pull-right'>
-                         <i class='far fa-calendar-alt' aria-hidden='true'></i>
-                         ${data.date}
-                      </span>
-                      <div class='clearfix'></div>
-                </div>
-                <h2 class='post-header'>
-                  ${data.title}
-                </h2>
-               </div>
-            </div></a>
-          </div>`;
-  }
-
-
-  fetch(baseUrl)
-  .then(response => response.json())
-  .then(d => {
-    data = d.projects;
-    for(var i=0; i<data.length; i++){
-      filldata(data[i])
-    }
-  });
-
-
  </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js"></script>

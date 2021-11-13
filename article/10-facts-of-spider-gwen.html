@@ -58,16 +58,14 @@
   <div class='container'>
 	 <div class="row">
        <div class='col-sm-2 hide-in-mobile'>
-        <?php include"../ad.php"; ?>
-       
+      
        </div>
        <div class='col-sm-8'>
-        <img src='../images/10-facts-of-spider-gwen.jpg' width='100%' class='cover_image' alt='10 facts of spider gwen'><br>
+        <img src='../images/spidergwen.jpg' width='100%' class='cover_image' alt='10 facts of spider gwen'><br>
         <div class='date'><i class='far fa-calendar-alt'></i> data and time</div>
         <div class='title'><h1>10 facts of spider gwen</h1></div>
         <div class='author'><i class='fas fa-user-circle'></i> Gaurav Jha</div><hr>
-        <?php include"../share.php"; ?>
-
+        
         <hr>
         <div class='content'>
               <h2 style="font-family: 'Rajdhani', sans-serif; font-size:20px;">
@@ -76,69 +74,57 @@
               
               
               <p class='no'>( 1 ) Alternate Earth </p>
-              <img src="../images/earth-65-spider-gwen.jpg" width="100%" alt="Earth 65 spider gwen"/><br>
-              <p>-  Gwen Stacy lives in Earth-65, an alternate Earth of marvel unniverse that debuted in Edge of Spider-Verse #2. At Earth 65 , instead of Peter Parker, Gwen Stacy was bitten by the radioactive spider, forcing her into a career as the Spider-Woman of her world (Earth 65)
+             <p>-  Gwen Stacy lives in Earth-65, an alternate Earth of marvel unniverse that debuted in Edge of Spider-Verse #2. At Earth 65 , instead of Peter Parker, Gwen Stacy was bitten by the radioactive spider, forcing her into a career as the Spider-Woman of her world (Earth 65)
               </p>
               <br>
               
               <p class='no'>( 2 ) Peter parker's death </p>
-              <img src="../images/Peter-parker-death.jpg" width="100%" alt="Peter parkers death"/><br>
-              <p>The bullying Peter suffered worsens, and eventually he creates a formula that turns him into a lizard mutantOn prom night, after he is being bullied yet again, he injects himself with the formula and transforms, going crazy. Gwen Stacy then dons her Spider-Woman costume and fights Peter, defeating him, but she accidentally pushes him too hard and kills him. Peter regresses to his human form in Gwen's arms, telling her he just wanted to "be special" like her and prompting her to realize what she has done
+               <p>The bullying Peter suffered worsens, and eventually he creates a formula that turns him into a lizard mutantOn prom night, after he is being bullied yet again, he injects himself with the formula and transforms, going crazy. Gwen Stacy then dons her Spider-Woman costume and fights Peter, defeating him, but she accidentally pushes him too hard and kills him. Peter regresses to his human form in Gwen's arms, telling her he just wanted to "be special" like her and prompting her to realize what she has done
               </p>
               <br>
               
                <p class='no'>( 3 ) Harry osborn </p>
-              <img src="../images/spider-gwen-vs-green-goblin.jpg" width="100%" alt="spider gwen vs green goblin"/><br>
               <p>Harry osborn is still green goblin in earth-65 he was motivated by peter's death to take down spider gwen
               </p>
               <br>
               
                <p class='no'>( 4 ) Frank Castle </p>
-              <img src="../images/Frank-Castle.jpg" width="100%" alt="Frank Castle"/><br>
               <p> Frank Castle the punisher who is now the captain of nypd's special crimes task force but is a bit of crazy maniac.
               </p>
               <br>
               
                 <p class='no'>( 5 ) Matt murdock </p>
-              <img src="../images/matt-murdock.jpg" width="100%" alt="Matt murdock"/><br>
               <p>- Matt murdock is still a lawyer but has now taken up the mantle of kingpin
               </p>
               <br>
-              <?php include"../ad.php"; ?>
+             
                <p class='no'>( 6 ) Miles morales - The spider man </p>
-              <img src="../images/Miles-morales.jpg" width="100%" alt="Miles morales spider gwen kiss"/><br>
               <p>- Miles morales the spider man of earth 1610, an also appearence on earth 65 too,
                 His father disappers from Earth 616 and is found on 65, he and spider gwen team up
               </p>
               <br>
               
                <p class='no'>( 7 ) Jessica drew </p>
-              <img src="../images/Jessica-drew.jpg" width="100%" alt="Jessica drew"/><br>
               <p>- Who is the Eath 616 spider woman, is completly shafted on 65. she is part of organisation called SILK that splinters SHIELD
               </p>
               <br>
               
                <p class='no'>( 8 ) She's a Drummer </p>
-              <img src="../images/mary-jane-watson.jpg" width="100%" alt="mary jane watson band"/><br>
               <p>- earth 65's gwen stacy was in a band with mary jane watson and shes a drummer in that band 
               </p>
               <br>
               
                
                <p class='no'>( 9 ) Popularity </p>
-              <img src="../images/Popularity-spider-gwen.jpg" width="100%" alt="spider gwen comics"/><br>
               <p>- First issue of spider gwen comic was the third best selling comic of feb 2015 and sold 250000 copies
               </p>
               <br>
               
                <p class='no'>( 10 ) Cosplay </p>
-              <img src="../images/spider-gwen-cosplay.jpg" width="100%" alt="spider gwen cosplay"/><br>
-              <p>One of the resion of popularity of spider gewn is cosplay, we collect some best pics of spider gwen cosplay from all over Internet
+               <p>One of the resion of popularity of spider gewn is cosplay, we collect some best pics of spider gwen cosplay from all over Internet
               </p>
               <br>
-              <?php include"../article-ad.php"; ?>
-             
-        </div><!--end content-->
+             </div><!--end content-->
        </div><!--end second column-->
        <div class='col-sm-2'>
        </div>	
@@ -181,7 +167,13 @@
  
 <script src="/js/jquery.js"></script>
 <script src="api.js"></script>
-
+<script>
+     $(document).ready(function(){
+        $('.icon').click(function(){
+          $('.menu').toggleClass('active')
+        })
+      })
+</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js"></script>
 </body>

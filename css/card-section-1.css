@@ -29,6 +29,7 @@ section{
 }
 
 .card .news-content{
+	width: 100%;
 	position: absolute;
 	bottom: -10px;
 	background: #fff;

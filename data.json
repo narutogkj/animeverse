@@ -65,6 +65,7 @@
             "title":"Create Mario in JavaScript",
             "titleforlink": "createmarioinjavaScript",
             "image": "/images/mario1.jpg",
+            "trending":true,
             "playlist": [
                 {  "part": "1",
                     "title": "How to make mario game in HTML",
