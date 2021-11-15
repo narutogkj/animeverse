@@ -28,8 +28,8 @@
       position: absolute;
       font-size: 10vw;
       top: 25%;
-      left: 55%;
-      transform: translate(-75%, -45%);
+      left: 30%;
+      transform: translate( 0, 50%);
       color: #f3f3f3;
       text-shadow: 10px 10px 20px rgba(0,0,0,.7);
    }
@@ -172,10 +172,9 @@
   }
 
    function fillmaindata(data){
-      console.log(data)
       mainblock.innerHTML = `   
       <div>
-          <a href="${data.playlink}" target="_blank">  
+          <a href="${data.playlist[plno].youtubelink}" target="_blank">  
             <i class="fab fa-google-play playicon"></i>
             <img src="${data.playlist[plno].image}" width="100%">
          </a>
@@ -187,38 +186,40 @@
          <div class='box'>
              <ul>
                 <li>
-                   <a href='#' target='_blank'>
-                      <i class='fab fa-facebook-f' aria-hidden='true'>    <span class='hide1'>Share</span></i> 
+                   <a href='${data.playlist[plno].downloadLink}' target='_blank'>
+                     <span class='hide1'><p> <i class='fas fa-file-download' aria-hidden='true'>Download Code</i></p> </span>
                    </a>
                 </l1>
                 <li>
-                   <a href='#' >
-                   <i class='fab fa-facebook-messenger' aria-hidden='true'>    <span class='hide1'>Share</span></i>
-                 </a>
-                </l1>
-                <li>
-                   <a href='#'>
-                   <i class='fab fa-google-plus-g' aria-hidden='true'>  <span class='hide1'>Share</span></i>
-                 </a>
-                </l1>
-                <li>
-                   <a href='#' data-action='share/whatsapp/share'>
-                      <i class='fab fa-whatsapp' aria-hidden='true'>  <span class='hide1'>Share</span></i>
-                   </a>
-                </l1>
-                
-                <li>
-                   <a href='#'>
-                   <i class='far fa-envelope' aria-hidden='true'> <span class='hide1'>Share</span></i>   
+                   <a href='${data.playlist[plno].playlink}' >
+                     <span class='hide1'><p> <i class='fab fa-playstation' aria-hidden='true'>Play Online</i></p></span>
                  </a>
                 </l1>
                
+               
+                
+                <li>
+                   <a href='${data.playlist[plno].youtubelink}'>
+                     <span class='hide1'><p> <i class='fab fa-youtube' aria-hidden='true'> Youtube</i> </p> </span> 
+                 </a>
+                </l1>
+               
+                <li>
+                   <a href='#' target='_blank'>
+                     <span class='hide1'><p> <i class='fab fa-facebook-f' aria-hidden='true'>Share</i> </p></span>
+                   </a>
+                </l1>
+                <li>
+                   <a href='#' data-action='share/whatsapp/share'>
+                     <span class='hide1'> <p> <i class='fab fa-whatsapp' aria-hidden='true'> Share</i></p></span>
+                   </a>
+                </l1>
+                
                    <div style='clear: both;'></div>
              </ul>
-           </div>
-           <br>
-           <br>
- 
+             <div style='clear: both;'></div>
+          </div>
+           
          <hr>
          <div class='content'>
                <h2 style="font-family: 'Rajdhani', sans-serif; font-size:20px;">
@@ -230,7 +231,7 @@
    function fillrelateddata(data){
     relatedblock.innerHTML += `
             <div class='card'>
-              <a href='singleGame.html?g=${data.titleforlink}'>
+              <a href='ytsingle.html?v=${data.titleforlink}'>
               <div class='post-image'>
                      <img src='${data.image}' class='img-responsive' width='100%' alt='".$row['alt']."'>
               </div>
@@ -276,7 +277,7 @@
   .then(response => response.json())
   .then(d => {
    relateddata = d.videos;
-    for(var i=0; i<relateddata.length; i++){
+    for(var i=0; i<2; i++){
       if(relateddata[i].trending == true )
       fillrelateddata(relateddata[i])
     }

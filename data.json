@@ -97,16 +97,16 @@
                 {  "part": "1",
                     "title": "Chromes Dinosure Game in Javascript",
                     "description": "Chromes Dinosure Game in Javascript",
-                    "playlink": "singleGame.html?g=mariogameinjavaScript",
-                    "downloadLink": "https://github.com/narutogkj/Mario/archive/refs/heads/Part1.zip",
+                    "playlink": "singleGame.html?g=chromedinogameinjavaScript",
+                    "downloadLink": "https://github.com/narutogkj/dino/archive/refs/heads/master.zip",
                     "image": "/images/dino.jpg",
                     "youtubelink":"https://youtu.be/44zN8IEkggA"
                 },
                 {   "part": "2",
-                    "title": "Enemy AI in JavaScript game",
-                    "description": "Enemy AI in JavaScript game",
-                    "playlink": "singleGame.html?g=mariogameinjavaScript",
-                    "downloadLink": "https://github.com/narutogkj/Mario/archive/refs/heads/Part2.zip",
+                    "title": "Flappy bird game in Javascript",
+                    "description": "Flappy bird game in Javascript",
+                    "playlink": "singleGame.html?g=flappybirdinjavaScript",
+                    "downloadLink": "https://github.com/narutogkj/flappy-Bird/archive/refs/heads/master.zip",
                     "image": "/images/flappybird.jpg",
                     "youtubelink":"https://youtu.be/N-TG5EBiYhI"
                 }
