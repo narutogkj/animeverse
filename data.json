@@ -31,7 +31,7 @@
             "titleforlink": "chromedinogameinjavaScript",
             "description": "This game is prototype of chromes dino game, i build this game using html and javascripts popular gaming library Phaser.js",
             "trending": true,
-            "image": "/images/dino.png"
+            "image": "/images/dino.jpg"
         },
         {
             "category": "Js Games",
@@ -42,7 +42,7 @@
             "titleforlink": "flappybirdinjavaScript",
             "description": "This game is prototype of classic flappy bird game, i build this game using html and javascripts popular gaming library Phaser.js",
             "trending": true,
-            "image": "/images/flappybird.png"
+            "image": "/images/flappybird.jpg"
         },
         {
             "category": "Js Games",
@@ -82,6 +82,33 @@
                     "downloadLink": "https://github.com/narutogkj/Mario/archive/refs/heads/Part2.zip",
                     "image": "/images/mario2.jpg",
                     "youtubelink":"https://youtu.be/jloDKBVzHMk"
+                }
+            ]
+        },
+        {
+            "category":"Videos",
+            "author": "Gaurav",
+            "date": "05-11-2021",
+            "title":"Create games in JavaScript",
+            "titleforlink": "creategamesinjavaScript",
+            "image": "/images/dino.jpg",
+            "trending":true,
+            "playlist": [
+                {  "part": "1",
+                    "title": "Chromes Dinosure Game in Javascript",
+                    "description": "Chromes Dinosure Game in Javascript",
+                    "playlink": "singleGame.html?g=mariogameinjavaScript",
+                    "downloadLink": "https://github.com/narutogkj/Mario/archive/refs/heads/Part1.zip",
+                    "image": "/images/dino.jpg",
+                    "youtubelink":"https://youtu.be/44zN8IEkggA"
+                },
+                {   "part": "2",
+                    "title": "Enemy AI in JavaScript game",
+                    "description": "Enemy AI in JavaScript game",
+                    "playlink": "singleGame.html?g=mariogameinjavaScript",
+                    "downloadLink": "https://github.com/narutogkj/Mario/archive/refs/heads/Part2.zip",
+                    "image": "/images/flappybird.jpg",
+                    "youtubelink":"https://youtu.be/N-TG5EBiYhI"
                 }
             ]
         }
