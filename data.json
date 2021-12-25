@@ -3,6 +3,17 @@
         {
             "category": "Js Games",
             "author": "Gaurav",
+            "date": "25-12-2021",
+            "title": "Space Impact V2 in JavaScript",
+            "playlink": "https://games-ef600.web.app/spaceimpactv2/",
+            "titleforlink": "spaceimpactv2injavaScript",
+            "description": "I try to re create classic space impact game, i build this game using html and javascripts popular gaming library Phaser.js",
+            "trending": true,
+            "image": "/images/spaceimapctv2.png"
+        },
+        {
+            "category": "Js Games",
+            "author": "Gaurav",
             "date": "05-11-2021",
             "title": "Mario game in JavaScript",
             "playlink": "https://games-ef600.web.app/mario/",
