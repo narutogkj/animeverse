@@ -3,6 +3,17 @@
         {
             "category": "Js Games",
             "author": "Gaurav",
+            "date": "09-04-2022",
+            "title": "War on Mars",
+            "playlink": "https://games-ef600.web.app/waronmars",
+            "titleforlink": "waronmars",
+            "description": "I build this game using html and javascripts popular gaming library Phaser.js, you can find the sourcr code in videos section of the site",
+            "trending": true,
+            "image": "/images/waronmars.png"
+        },
+        {
+            "category": "Js Games",
+            "author": "Gaurav",
             "date": "25-12-2021",
             "title": "Space Impact V2 in JavaScript",
             "playlink": "https://spaceimpact-36a20.web.app",
