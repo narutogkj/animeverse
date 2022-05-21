@@ -20,14 +20,14 @@
 </script>
 
 
-<title>20 DC characters that are copied from Marvel universe</title>
+<title></title>
 <meta name="language" content="english" />
 
 <style>
    .playicon{
       position: absolute;
       font-size: 10vw;
-      top: 25%;
+      top: 15%;
       left: 55%;
       transform: translate(-75%, -45%);
       color: #f3f3f3;
@@ -124,7 +124,9 @@
   let mainblock = document.getElementById('mainblock');
   let relatedblock = document.getElementById('relatedblock');
   let pagetitle = document.getElementById('pagetitle');
+  let title = document.getElementsByTagName('title');
 
+  
   let queryParamsString = (window.location.search).replace('?', '').split("&");
   let queryParamsObject = {}
   for (i = 0; i < queryParamsString.length; i++) {
@@ -136,10 +138,10 @@
 
 
    function fillmaindata(data){
+      title.innerHTML  = data.title
       mainblock.innerHTML = `
       
       <div>
-         
           <a href="${data.playlink}" target="_blank">  
             <i class="fab fa-google-play playicon"></i>
             <img src="${data.image}" width="100%">

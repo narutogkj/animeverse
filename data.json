@@ -3,6 +3,17 @@
         {
             "category": "Js Games",
             "author": "Gaurav",
+            "date": "21-05-2022",
+            "title": "Metal War",
+            "playlink": "https://games-ef600.web.app/metalwar",
+            "titleforlink": "metalwar",
+            "description": "I build this game using html and javascripts popular gaming library Phaser.js, you can find the sourcr code in videos section of the site",
+            "trending": true,
+            "image": "/images/metalwar.jpg"
+        },
+        {
+            "category": "Js Games",
+            "author": "Gaurav",
             "date": "09-04-2022",
             "title": "War on Mars",
             "playlink": "https://games-ef600.web.app/waronmars",
@@ -52,7 +63,7 @@
             "playlink": "https://games-ef600.web.app/dino/",
             "titleforlink": "chromedinogameinjavaScript",
             "description": "This game is prototype of chromes dino game, i build this game using html and javascripts popular gaming library Phaser.js",
-            "trending": true,
+            "trending": false,
             "image": "/images/dino.jpg"
         },
         {
