@@ -33,7 +33,8 @@
        <div class='form'>
         <header>
            <ul>
-            <li><a href='/jsgames.html'>Games</a></li>
+            <li><a href='/90sgames.html'>90s Game</a></li>
+            <li><a href='/jsgames.html'>Js Games</a></li>
             <li><a href='/ytvideos.html'>Videos</a></li>
             <li><a href='/andriod.html'>Anime</a></li>
             <li><a href='/projects.html'>Projects</a></li>
@@ -45,19 +46,18 @@
 
 
   
-  <section>
+  <section class="container">
     <br><br>
-
     <div class="container-fluid">
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-          <li class="breadcrumb-item active" aria-current="page">Projects</li>
+          <li class="breadcrumb-item active" aria-current="page">90's Games</li>
         </ol>
       </nav>
         <div class="row" id="mainblock">
       
-        </div>
+        </div> 
     </div>
   </section>
  <br>
@@ -73,8 +73,7 @@
 
   <div class='footer-menu-one'>
     <ul>
-      <li><a href='/90sgames.html'>90s Game</a></li>
-      <li><a href='/jsgames.html'>Js Games</a></li>
+      <li><a href='/jsgames.html'>Games</a></li>
       <li><a href='/ytvideos.html'>Videos</a></li>
       <li><a href='/andriod.html'>Anime</a></li>
       <li><a href='/projects.html'>Projects</a></li>
@@ -116,7 +115,7 @@
     mainblock.innerHTML += `
     <div class='col-sm-4'>
             <div class='card'>
-              <a href='singleProjects.html?p=${data.titleforlink}'>
+              <a href='single90sGame.html?g=${data.titleforlink}'>
               <div class='post-image'>
                      <img src='${data.image}' class='img-responsive' width='100%' alt='".$row['alt']."'>
               </div>
@@ -146,7 +145,7 @@
   fetch(baseUrl)
   .then(response => response.json())
   .then(d => {
-    data = d.projects;
+    data = d.games90s;
     for(var i=0; i<data.length; i++){
       filldata(data[i])
     }

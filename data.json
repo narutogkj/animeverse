@@ -1,4 +1,18 @@
 {
+    "games90s": [
+        {
+            "category": "90s Game",
+            "author": "NES",
+            "date": "27-11-2022",
+            "title": "Mighty final fight",
+            "playlink": "https://games-ef600.web.app/emulater/index.html",
+            "titleforlink": "mightyfinalfight",
+            "description": "Mighty Final Fight is a side-scrolling beat-'em-up released by Capcom for the Nintendo Entertainment System in 1993.",
+            "trending": true,
+            "image": "/images/mightyfinalfight.jpg"
+        }           
+       
+    ],
     "games": [
         {
             "category": "Js Games",

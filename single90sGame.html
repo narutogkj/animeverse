@@ -62,7 +62,7 @@
    <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-        <li class="breadcrumb-item"><a href="./jsgames.html">Games</a></li>
+        <li class="breadcrumb-item"><a href="./90sgames.html">90's Games</a></li>
         <li class="breadcrumb-item active" aria-current="page" id="pagetitle"></li>
       </ol>
     </nav>
@@ -228,7 +228,7 @@
    fetch(baseUrl)
   .then(response => response.json())
   .then(d => {
-    data = d.games;
+    data = d.games90s;
     for(var i=0; i<data.length; i++){
       if(data[i].titleforlink == queryParamsObject.g){
          fillmaindata(data[i]) ;
@@ -241,7 +241,7 @@
   fetch(baseUrl)
   .then(response => response.json())
   .then(d => {
-   relateddata = d.games;
+   relateddata = d.games90s;
     for(var i=0; i<relateddata.length; i++){
       if(relateddata[i].trending == true )
       fillrelateddata(relateddata[i])
