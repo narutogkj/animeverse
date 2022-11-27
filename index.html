@@ -182,6 +182,10 @@
   .then(response => response.json())
   .then(d => {
     data = d;
+    for(var i=0; i<data.games90s.length; i++){
+      if(data.games90s[i].trending == true )
+      filldata(data.games90s[i], 'single90sGame.html?g=')
+    }
     for(var i=0; i<data.games.length; i++){
       if(data.games[i].trending == true )
       filldata(data.games[i], 'singleGame.html?g=')

@@ -10,8 +10,40 @@
             "description": "Mighty Final Fight is a side-scrolling beat-'em-up released by Capcom for the Nintendo Entertainment System in 1993.",
             "trending": true,
             "image": "/images/mightyfinalfight.jpg"
-        }           
-       
+        },
+        {
+            "category": "90s Game",
+            "author": "NES",
+            "date": "27-11-2022",
+            "title": "Super Mario 14",
+            "playlink": "https://games-ef600.web.app/emulater/index.html",
+            "titleforlink": "supermario14",
+            "description": "Super Mario 14, or Mario 14 (馬利十四), is a hack of the Japan-exclusive Famicom title Kaiketsu Yanchamaru 3: Taiketsu! Zouringen, the second follow-up to Kid Niki: Radical Ninja.",
+            "trending": true,
+            "image": "/images/supermario14.jpeg"
+        },
+        {
+            "category": "90s Game",
+            "author": "NES",
+            "date": "27-11-2022",
+            "title": "Contra",
+            "playlink": "https://games-ef600.web.app/emulater/index.html",
+            "titleforlink": "contra",
+            "description": "Contra is a video game series produced by Konami composed primarily of run and gun-style shooting games.",
+            "trending": true,
+            "image": "/images/contra.jpeg"
+        },
+        {
+            "category": "90s Game",
+            "author": "NES",
+            "date": "27-11-2022",
+            "title": "Super Mario Bros",
+            "playlink": "https://games-ef600.web.app/emulater/index.html",
+            "titleforlink": "supermariobros",
+            "description": "Mario Bros. is a 1983 arcade game developed and published for arcades by Nintendo. It was designed by Shigeru Miyamoto and Gunpei Yokoi, Nintendo's chief engineer.",
+            "trending": true,
+            "image": "/images/supermariobros.png"
+        } 
     ],
     "games": [
         {
