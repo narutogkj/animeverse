@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src='build/gamecontroller.js'></script>
+    <script src="build/nes.min.js"></script>
+    <style>
+       body {
+        display: block;
+            overflow: hidden;
+            margin: 0;
+            padding: 0;    
+        }
+        .controllerKeys{
+          z-index: 2;
+        }
+        
+        .rounded{
+          border-radius: 5ch !important;
+        }
+    </style>
+    <script type="text/javascript">
+      var nes;
+
+
+      function loadRom(gamelink) {
+        var request = new XMLHttpRequest();
+        request.responseType = 'arraybuffer';
+        request.open('GET', gamelink, true);
+        request.setRequestHeader("Access-Control-Allow-Origin", "*");
+        request.setRequestHeader("Access-Control-Allow-Credentials", "false");
+        request.setRequestHeader("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
+        request.setRequestHeader("Access-Control-Allow-Headers", "Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers");
+        
+        request.onload = function() {
+          run(request.response);
+        };
+        request.onerror = function(e) {
+          console.log(e)
+        };
+        request.send(null);
+      }
+
+
+      function init() {
+        document.getElementById('stopButton').disabled = true;
+        document.getElementById('resumeButton').disabled = true;
+
+
+
+        if(innerWidth < innerHeight){
+          document.getElementById('mainCanvas').style.height = window.screen.width+"px";
+        }else{
+          document.getElementById('mainCanvas').style.height = window.screen.height - 70 +"px";
+        }
+        document.getElementById('mainCanvas').style.width = window.screen.width+"px";
+        document.getElementById('mainCanvas').style.zIndex = "-2";
+        document.getElementById('middleSection').style.position = "absolute";
+        document.getElementById('middleSection').style.top = innerHeight-180+"px";
+        document.getElementById('middleSection').style.left = innerWidth/2-60+"px";
+
+        
+        document.getElementById('rightSection').style.position = "absolute";
+        document.getElementById('rightSection').style.top = innerHeight-250+"px";
+        document.getElementById('rightSection').style.left = innerWidth-100+"px";
+
+        document.getElementById('leftSection').style.position = "absolute";
+        document.getElementById('leftSection').style.top = innerHeight-250+"px";
+        document.getElementById('leftSection').style.left = 20+"px";
+        
+        let urlParams = window.location.search;
+        let gamelink = "./roms/"+urlParams.split("=")[1]
+       
+        
+        loadRom(gamelink)
+      }
+
+      function NESran() {
+        document.getElementById('stopButton').disabled = false;
+        document.getElementById('resumeButton').disabled = true;
+      }
+
+      function NESstopped() {
+        document.getElementById('stopButton').disabled = true;
+        document.getElementById('resumeButton').disabled = false;
+      }
+
+      function run(buffer) {
+        try {
+          var rom = new NesJs.Rom(buffer);
+        } catch(e) {
+        
+          return;
+        }
+
+       
+
+        nes = new NesJs.Nes();
+
+        nes.addEventListener('fps', function(fps) {
+          document.getElementById('fps').innerText = fps.toFixed(2);
+        });
+
+        nes.setRom(rom);
+
+        nes.setDisplay(new NesJs.Display(document.getElementById('mainCanvas')));
+
+        try {
+          nes.setAudio(new NesJs.Audio());
+        } catch(e) {
+         
+        }
+
+        window.onkeydown = function(e) { nes.handleKeyDown(e); };
+        window.onkeyup = function(e) { nes.handleKeyUp(e); };
+
+       
+        nes.bootup();
+
+       
+        NESran();
+        nes.run();
+      }
+      
+      function pushStopButton() {
+        nes.stop();
+        NESstopped();
+      }
+      
+      function pushStepButton() {
+        nes.runStep();
+      }
+      
+      function pushResumeButton() {
+        nes.resume();
+        NESran();
+      }
+      function pressPadButton(key) {
+        if(nes === undefined)
+          return;
+        nes.pad1.pressButton(key);
+      }
+     
+      function releasePadButton(key) {
+        if(nes === undefined)
+          return;
+        nes.pad1.releaseButton(key);
+      }
+
+
+  
+  function gamePadEvents(myController){
+    myController
+    .on('button0', () => { 
+      pressPadButton(NesJs.Joypad.BUTTONS.A)
+    })
+    .on('button1', () => {  
+      pressPadButton(NesJs.Joypad.BUTTONS.B)
+    })
+    .after('button0', () => { 
+      releasePadButton(NesJs.Joypad.BUTTONS.A)
+    })
+    .after('button1', () => { 
+      releasePadButton(NesJs.Joypad.BUTTONS.B)
+    })
+    .on('up0', () => {  pressPadButton(NesJs.Joypad.BUTTONS.UP)})
+    .on('down0', () => {pressPadButton(NesJs.Joypad.BUTTONS.DOWN) })
+    .on('right0', () => { pressPadButton(NesJs.Joypad.BUTTONS.RIGHT) })
+    .on('left0',  () => {  pressPadButton(NesJs.Joypad.BUTTONS.LEFT) })
+    .after('up0', () => { releasePadButton(NesJs.Joypad.BUTTONS.UP)})
+    .after('down0',  () => {  releasePadButton(NesJs.Joypad.BUTTONS.DOWN) })
+    .after('right0', () => { releasePadButton(NesJs.Joypad.BUTTONS.RIGHT) })
+    .after('left0', () => { releasePadButton(NesJs.Joypad.BUTTONS.LEFT) })
+
+    .on('button10', () => { 
+      pressPadButton(NesJs.Joypad.BUTTONS.SELECT) })
+    .on('button11',  () => {  
+      pressPadButton(NesJs.Joypad.BUTTONS.START) })
+    .after('button10', () => { 
+      releasePadButton(NesJs.Joypad.BUTTONS.SELECT)})
+    .after('button11',  () => {  
+      releasePadButton(NesJs.Joypad.BUTTONS.START) 
+    })
+    
+  }
+  if(gameControl.getGamepad(0) ){
+      gamePadEvents(gameControl.getGamepad(0))
+  }else{
+      gameControl.on('connect', function(gamepad) {
+          gamePadEvents(gameControl.getGamepad(0))
+      })
+  }  
+    
+    </script>
+  </head>
+  <body onload="init()">
+
+   
+  
+    <div class="gameSection">
+      <canvas id="mainCanvas"></canvas>  
+    </div>
+
+    <div class="controllerKeys">
+      <div id="leftSection">
+        <button style="margin-left:35px;" class="btn btn-primary rounded" id="pad1_4" onpointerover="pressPadButton(NesJs.Joypad.BUTTONS.UP)" onpointerout="releasePadButton(NesJs.Joypad.BUTTONS.UP)">W</button>
+        <br>
+        <button class="btn btn-primary rounded" id="pad1_6" onpointerover="pressPadButton(NesJs.Joypad.BUTTONS.LEFT)" onpointerout="releasePadButton(NesJs.Joypad.BUTTONS.LEFT)">A</button>
+        <button style="margin-left:35px;" class="btn btn-primary rounded" id="pad1_5" onpointerover="pressPadButton(NesJs.Joypad.BUTTONS.RIGHT)" onpointerout="releasePadButton(NesJs.Joypad.BUTTONS.RIGHT)">D</button>
+        <br>
+        <button style="margin-left:35px;" class="btn btn-primary rounded" id="pad1_7" onpointerover="pressPadButton(NesJs.Joypad.BUTTONS.DOWN)" onpointerout="releasePadButton(NesJs.Joypad.BUTTONS.DOWN)">S</button>
+       
+      </div>
+      
+      <div id="middleSection">
+        <br><br><br>
+        <button class="btn btn-primary btn-sm" id="pad1_2" onpointerover="pressPadButton(NesJs.Joypad.BUTTONS.SELECT)" onpointerout="releasePadButton(NesJs.Joypad.BUTTONS.SELECT)" >SELECT</button>
+        <button class="btn btn-primary btn-sm" id="pad1_3" onpointerover="pressPadButton(NesJs.Joypad.BUTTONS.START)" onpointerout="releasePadButton(NesJs.Joypad.BUTTONS.START)" >START</button>
+        <br>
+        <button class="btn btn-primary btn-sm"  id="stopButton" onclick="pushStopButton()">stop</button>
+        <button class="btn btn-primary btn-sm"  id="resumeButton" onclick="pushResumeButton()">resume</button>
+        
+      </div>
+
+      <div id="rightSection">
+       
+        <button class="btn btn-primary rounded"  id="pad1_1" onpointerover="pressPadButton(NesJs.Joypad.BUTTONS.B)" onpointerout="releasePadButton(NesJs.Joypad.BUTTONS.B)">K</button>
+        <button class="btn btn-primary rounded" style="margin-left:40px;"  id="pad1_0" onpointerover="pressPadButton(NesJs.Joypad.BUTTONS.A)" onpointerout="releasePadButton(NesJs.Joypad.BUTTONS.A)">L</button>
+       
+        
+        <span id="fps"></span>
+      </div>
+    </div>
+     
+   
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
