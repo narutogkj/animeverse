@@ -6,19 +6,20 @@
   <link href="https://fonts.googleapis.com/css?family=Concert+One|Crete+Round|Rajdhani" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
   <link rel="stylesheet" type="text/css" href="./css/index.css">
   <link rel="stylesheet" type="text/css" href="./css/slide-bar.css">
-  
   <link rel="stylesheet" type="text/css" href="./css/card-section-1.css">
   <link rel="stylesheet" type="text/css" href="./css/footer.css">
   <link rel="stylesheet" type="text/css" href="./css/header.css">
   <link rel="stylesheet" type="text/css" href="./css/article.css">
   <link rel="stylesheet" type="text/css" href="./css/share.css">
   <link rel="stylesheet" type="text/css" href="./css/list.css">
+  <link rel="stylesheet" type="text/css" href="./css/breadcrumb.css">
   <link rel="icon" type="image/png" href="images/favicon.png" />
   <title>AnimeVerse: a Door of Anime and Comics universe</title>
   <meta name="language" content="english" />
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8900138503743488" crossorigin="anonymous"></script>
+ 
 </head>
 <body>
   <div class='navigation-bar'>
@@ -176,28 +177,43 @@
           </div>`;
   }
 
+  function sectionDevider(data){
+    mainblock.innerHTML += `
+    <div class="container">
+      <ol class="breadcrumb breadcrumb-arrow">
+		    <li><a href="#">Home</a></li>
+		    <li class="active"><span>${data}</span></li>
+	    </ol>
+    </div>
+    `;
+  }
 
 
   fetch(baseUrl)
   .then(response => response.json())
   .then(d => {
     data = d;
+    sectionDevider("90's Game");
     for(var i=0; i<data.games90s.length; i++){
       if(data.games90s[i].trending == true )
       filldata(data.games90s[i], 'single90sGame.html?g=')
     }
+    sectionDevider("JS Game");
     for(var i=0; i<data.games.length; i++){
       if(data.games[i].trending == true )
       filldata(data.games[i], 'singleGame.html?g=')
     }
+    sectionDevider("Videos");
     for(var i=0; i<data.videos.length; i++){
       if(data.videos[i].trending == true )
       filldata(data.videos[i], 'ytsingle.html?v=')
     }
+    sectionDevider("Article");
     for(var i=0; i<data.anime.length; i++){
       if(data.anime[i].trending == true )
       filldata(data.anime[i], '/article/')
     }
+    sectionDevider("Projects");
     for(var i=0; i<data.projects.length; i++){
       if(data.projects[i].trending == true )
       filldata(data.projects[i], 'singleProjects.html?p=')
